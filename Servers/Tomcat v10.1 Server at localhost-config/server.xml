@@ -39,6 +39,7 @@
          UserDatabaseRealm to authenticate users
     -->
     <Resource auth="Container" description="User database that can be updated and saved" factory="org.apache.catalina.users.MemoryUserDatabaseFactory" name="UserDatabase" pathname="conf/tomcat-users.xml" type="org.apache.catalina.UserDatabase"/>
+     <Resource auth="Container" driverClassName="oracle.jdbc.OracleDriver" initialSize="0" maxIdle="20" maxTotal="20" maxWaitMillis="5000" minIdle="5" name="dbcp_myoracle" password="1234" type="javax.sql.DataSource" url="jdbc:oracle:thin:@localhost:1521:orcl21v" username="DELFTIN"/>
   </GlobalNamingResources>
 
   <!-- A "Service" is a collection of one or more "Connectors" that share
@@ -61,7 +62,7 @@
          AJP  Connector: /docs/config/ajp.html
          Define a non-SSL/TLS HTTP/1.1 Connector on port 8080
     -->
-    <Connector connectionTimeout="20000" maxParameterCount="1000" port="8090" protocol="HTTP/1.1" redirectPort="8443"/>
+    <Connector connectionTimeout="20000" maxParameterCount="1000" port="8080" protocol="HTTP/1.1" redirectPort="8443"/>
     <!-- A "Connector" using the shared thread pool-->
     <!--
     <Connector executor="tomcatThreadPool"
@@ -142,7 +143,7 @@
              Note: The pattern used is equivalent to using pattern="common" -->
         <Valve className="org.apache.catalina.valves.AccessLogValve" directory="logs" pattern="%h %l %u %t &quot;%r&quot; %s %b" prefix="localhost_access_log" suffix=".txt"/>
 
-      <Context docBase="Proj0822" path="/Proj0822" reloadable="true" source="org.eclipse.jst.jee.server:Proj0822"/></Host>
+      <Context docBase="Ch05.Database" path="/Ch05.Database" reloadable="true" source="org.eclipse.jst.jee.server:Ch05.Database"/><Context docBase="Ch06.Session" path="/Ch06.Session" reloadable="true" source="org.eclipse.jst.jee.server:Ch06.Session"/></Host>
     </Engine>
   </Service>
 </Server>
