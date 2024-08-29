@@ -10,8 +10,27 @@
     <welcome-file>default.htm</welcome-file>
   </welcome-file-list>
   
+  <!-- web.xml에 오라클 접속 정보 입력 -->
+  <context-param>
+  	<param-name>OracleDriver</param-name> <!-- 드라이버 이름 -->
+  	<param-value>oracle.jdbc.OracleDriver</param-value>
+  </context-param>
+  <context-param>
+  	<param-name>OracleURL</param-name> <!-- 접속 URL -->
+  	<param-value>jdbc:oracle:thin:@localhost:1521:orcl21v</param-value>
+  </context-param>
+  <context-param>
+  	<param-name>OracleId</param-name> <!-- 계정 아이디 -->
+  	<param-value>DELFTIN</param-value>
+  </context-param>
+  <context-param>
+  	<param-name>OraclePwd</param-name> <!-- 패스워드 -->
+  	<param-value>1234</param-value>
+  </context-param>
+  
   <!-- 'web.xml'에서는 유지시간을 분 단위로 설정 = 20분 -->
   <session-config>
   	<session-timeout>20</session-timeout>
   </session-config>
+
 </web-app>

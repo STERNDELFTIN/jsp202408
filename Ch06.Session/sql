@@ -1,0 +1,6 @@
+SELECT * FROM MEMBER;
+
+INSERT INTO MEMBER(id, pass, name) VALUES('lgy', '1234', '이가영');
+
+SELECT * FROM MEMBER WHERE id='lgy' AND pass='1234';
+

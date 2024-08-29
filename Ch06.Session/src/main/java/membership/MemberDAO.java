@@ -27,8 +27,8 @@ public class MemberDAO extends JDBConnect {
 				// 쿼리 결과로 얻은 회원 정보를 DTO 객체에 저장
 				dto.setId(rs.getString("id"));
 				dto.setPass(rs.getString("pass"));
-				dto.setName(rs.getString(3));
-				dto.setRegidate(rs.getString(4));
+				dto.setName(rs.getString("name"));
+				dto.setRegidate(rs.getString("regidate"));
 			}
 		}
 		catch (Exception e){

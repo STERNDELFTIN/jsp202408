@@ -10,9 +10,9 @@
 <body>
 	<%
 	// includeDirective.jsp에서 선언한 변수 사용
-	out.println("오늘 날짜: " + today);
+	//out.println("오늘 날짜: " + today);
 	out.println("<br>");
-	out.println("내일 날짜 : " + tomorrow);
+	//out.println("내일 날짜 : " + tomorrow);
 	%>
 </body>
 </html>
